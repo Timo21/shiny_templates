@@ -17,11 +17,6 @@ df_raw <- read.csv(file.path('data', 'studentdata_example.csv'))
 # Perform pre-processing steps that should be executed once before the app starts
 df_raw <- prep_student_data(df_raw)
 
-# Load the UI components after data has been loaded (filters often use the data)
-for (file in list.files('ui_components')){
-  source(file.path('ui_components', file))
-}
-
 # Load colors globally if relevant
 colors_df <- read.csv("data/var_colors.csv", stringsAsFactors = FALSE)
 colors_vec <- make_color_vectors(colors_df)
